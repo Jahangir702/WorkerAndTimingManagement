@@ -1,0 +1,74 @@
+﻿@model Worker
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row">
+    <div class="col-12">
+        <form asp-action="Create" asp-controller="Workers" method="post" enctype="multipart/form-data">
+            @Html.AntiForgeryToken()
+            <h3>Add new worker</h3>
+            <div class="form-group row mb-1">
+                <label asp-for="WorkerName" class="col-form-label col-form-label-sm col-2 text-end"></label>
+                <div class="col-4">
+                    <input asp-for="WorkerName" class="form-control form-control-sm" />
+                    <span asp-validation-for="WorkerName" class="text-danger" style="font-size:small"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-1">
+                <label asp-for="Phone" class="col-form-label col-form-label-sm col-2 text-end"></label>
+                <div class="col-4">
+                    <input asp-for="Phone" class="form-control form-control-sm" />
+                    <span asp-validation-for="Phone" class="text-danger" style="font-size:small"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-1">
+                <label asp-for="Address" class="col-form-label col-form-label-sm col-2 text-end"></label>
+                <div class="col-4">
+                    <textarea asp-for="Address" class="form-control form-control-sm"></textarea>
+                    <span asp-validation-for="Address" class="text-danger" style="font-size:small"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-1">
+                <label asp-for="PayRate" class="col-form-label col-form-label-sm col-2 text-end"></label>
+                <div class="col-4">
+                    <input asp-for="PayRate" class="form-control form-control-sm" />
+                    <span asp-validation-for="PayRate" class="text-danger" style="font-size:small"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-1">
+                <label asp-for="Picture" class="col-form-label col-form-label-sm col-2 text-end"></label>
+                <div class="col-4">
+                    <input type="file" asp-for="Picture" class="form-control form-control-sm" />
+                    <span asp-validation-for="Picture" class="text-danger" style="font-size:small"></span>
+                </div>
+                <div class="col-2 py-0">
+                    <img id="preview" class="rounded-2" src="~/Pictures/no-pic.jpg" style="width:50px" />
+                </div>
+            </div>
+            <div class="form-group row">
+
+                <div class="col-4 offset-2 text-end">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </form>
+        <div class="col-12">
+            @Html.ActionLink("Back to list", "Index", null, new { @class = "my-link-style btn btn-primary", style = "color: White; font-weight: bold;" })
+        </div>
+    </div>
+</div>
+@section scripts
+    {
+
+    <script src="~/libs/jquery/jquery.js"></script>
+    <script src="~/libs/validate/jquery.validate.js"></script>
+    <script src="~/libs/validate/jquery.validate.unobtrusive.js"></script>
+    <script>
+        document.getElementById("Picture").addEventListener("change", evt => {
+            var src = URL.createObjectURL(evt.target.files[0])
+            console.log(src);
+            document.getElementById('preview').src = src;
+        });
+    </script>
+}

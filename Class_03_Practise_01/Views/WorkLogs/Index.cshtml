@@ -1,0 +1,104 @@
+﻿@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@using X.PagedList.Web.Common;
+@model IEnumerable<WorkLogViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <div class="col-12">
+        <h3>New Worker List</h3>
+        <div class="d-flex justify-content-end mb-1">
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-danger"><i class="bi bi-plus"></i> Create..</button>
+                <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li> <a asp-controller="Workers" asp-action="Create" class="dropdown-item"> Create Worker</a></li>
+                    <li> <a asp-controller="WorkLogs" asp-action="Create" class="dropdown-item"> Create Work Log</a> </li>
+
+                </ul>
+            </div>
+        </div>
+        <table class="table table-bordered table-striped">
+            <thead class="bg-light">
+                <tr>
+                    <th>Worker name</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Days worked</th>
+                    <th>PayRate</th>
+                    <th>Payable</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var w in Model)
+                {
+
+                    <tr>
+                        <td><a href="#" class="btn btn-light detail" data-worker-id="@w.WorkerId">@w.WorkerName &nbsp;<i class="bi bi-box-arrow-up-right"></i></a> </td>
+                        <td>@w.StartDate.ToString("yyyy-MM-dd")</td>
+                        <td>@(w.EndDate.HasValue ? w.EndDate?.ToString("yyyy-MM-dd") : "-")</td>
+                        <td>@(w.DayWorked.HasValue ? w.DayWorked.Value.ToString() : "-")</td>
+                        <td>@(w.PayRate.HasValue ? w.PayRate.Value.ToString("0.00") : "-")</td>
+                        <td>@(w.Payable.HasValue ? w.Payable.Value.ToString("0.00") : "-")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-end">
+            @Html.PagedListPager((IPagedList)Model, pg => Url.Action("Index", new { pg = pg }), new PagedListRenderOptions
+            {
+            LiElementClasses = new string[] { "page-item" },
+            PageClasses = new string[] { "page-link" }
+            })
+        </div>
+    </div>
+</div>
+<div class="modal" tabindex="-1" id="wdetails">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title">Worker details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="mbody">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+@section styles {
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+}
+@section scripts {
+
+
+    <script src="~/libs/jquery/jquery.js"></script>
+    <script>
+        var modal = new bootstrap.Modal(document.getElementById('wdetails'), {
+            keyboard: true
+        });
+        $(".detail").click(function (evt) {
+
+            evt.preventDefault();
+            var wid = $(this).data('worker-id');
+
+            $.ajax({
+                type: "get",
+                url: `/Workers/WorkerDetails/${wid}`,
+                success: r => {
+                    $("#mbody").html(r);
+                    modal.show();
+                }
+            })
+        });
+    </script>
+}
+

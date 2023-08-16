@@ -1,0 +1,86 @@
+﻿@model WorkLog
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="row">
+    <div class="col-12">
+
+        <h3>Delete This Work Logs</h3>
+        @*<div class="form-group row mb-1">
+            <label asp-for="WorkerId" class="col-form-label col-form-label-sm col-2 text-end"></label>
+            <div class="col-4">
+                <select asp-for="WorkerId" class="form-select form-select-sm" asp-items="@(new SelectList(ViewBag.Workers, "WorkerId", "WorkerName"))"></select>
+                <span asp-validation-for="WorkerId" class="text-danger" style="font-size:small"></span>
+            </div>
+        </div>*@
+        <div class="form-group row mb-1">
+            <label asp-for="StartDate" class="col-form-label col-form-label-sm col-2 text-end"></label>
+            <div class="col-4">
+                <input type="text" asp-for="StartDate" class="form-control form-control-sm" />
+                <span asp-validation-for="StartDate" class="text-danger" style="font-size:small"></span>
+            </div>
+        </div>
+        <div class="form-group row mb-1">
+            <label asp-for="EndDate" class="col-form-label col-form-label-sm col-2 text-end"></label>
+            <div class="col-4">
+                <input type="text" asp-for="EndDate" class="form-control form-control-sm" />
+                <span asp-validation-for="EndDate" class="text-danger" style="font-size:small"></span>
+            </div>
+        </div>
+
+            <div class="form-group row">
+            <form asp-action="Delete" asp-controller="WorkLogs" method="post">
+            @Html.AntiForgeryToken()
+                <input type="hidden" asp-for="WorkerId" />
+                <div class="col-4 offset-2 text-end">
+                    <button type="submit" value="Delete" class="btn btn-primary">Confirm Delete</button>
+                </div>
+            </form>
+            </div>
+  
+        <div class="col-12">
+            @Html.ActionLink("Back to list", "Index", null, new { @class = "my-link-style btn btn-primary", style = "color: White; font-weight: bold;" })
+        </div>
+    </div>
+</div>
+@section styles
+    {
+    <link href="~/libs/datepicker/css/bootstrap-datepicker.standalone.css" rel="stylesheet" />
+
+}
+@section scripts
+    {
+
+    <script src="~/libs/jquery/jquery.js"></script>
+    <script src="~/libs/validate/jquery.validate.js"></script>
+    <script src="~/libs/validate/jquery.validate.unobtrusive.js"></script>
+    <script src="~/libs/datepicker/js/bootstrap-datepicker.js"></script>
+    <script>
+        $("#StartDate").datepicker({
+            format: "yyyy-mm-dd"
+        })
+        $("#EndDate").datepicker({
+            format: "yyyy-mm-dd"
+        })
+
+        $("#StartDate").val(formatDate($("#StartDate").val()));
+        if ($("#EndDate").val() != "") {
+            $("#EndDate").val(formatDate($("#EndDate").val()));
+        }
+        function formatDate(dt) {
+            //console.log(dt);
+            var d = new Date(dt);
+            //console.log(d);
+            return [
+                d.getFullYear(),
+                (d.getMonth() + 1).toString().padStart(2, '0'),
+                d.getDate().toString().padStart(2, '0')
+            ].join('-');
+        }
+    </script>
+}
+
+
+
+

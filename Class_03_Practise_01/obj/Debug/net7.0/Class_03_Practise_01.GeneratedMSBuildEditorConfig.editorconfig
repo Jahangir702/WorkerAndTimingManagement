@@ -1,0 +1,69 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Class_03_Practise_01
+build_property.RootNamespace = Class_03_Practise_01
+build_property.ProjectDir = D:\IDB Course\C#.Net\Modules-07\03\Me\Class_03_Practise_01\Class_03_Practise_01\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\IDB Course\C#.Net\Modules-07\03\Me\Class_03_Practise_01\Class_03_Practise_01
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/IDB Course/C\#.Net/Modules-07/03/Me/Class_03_Practise_01/Class_03_Practise_01/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/IDB Course/C\#.Net/Modules-07/03/Me/Class_03_Practise_01/Class_03_Practise_01/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/IDB Course/C\#.Net/Modules-07/03/Me/Class_03_Practise_01/Class_03_Practise_01/Views/Workers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya2Vyc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/IDB Course/C\#.Net/Modules-07/03/Me/Class_03_Practise_01/Class_03_Practise_01/Views/Workers/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya2Vyc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/IDB Course/C\#.Net/Modules-07/03/Me/Class_03_Practise_01/Class_03_Practise_01/Views/Workers/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya2Vyc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/IDB Course/C\#.Net/Modules-07/03/Me/Class_03_Practise_01/Class_03_Practise_01/Views/Workers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya2Vyc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/IDB Course/C\#.Net/Modules-07/03/Me/Class_03_Practise_01/Class_03_Practise_01/Views/Workers/_WorkerDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya2Vyc1xfV29ya2VyRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/IDB Course/C\#.Net/Modules-07/03/Me/Class_03_Practise_01/Class_03_Practise_01/Views/WorkLogs/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya0xvZ3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/IDB Course/C\#.Net/Modules-07/03/Me/Class_03_Practise_01/Class_03_Practise_01/Views/WorkLogs/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya0xvZ3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/IDB Course/C\#.Net/Modules-07/03/Me/Class_03_Practise_01/Class_03_Practise_01/Views/WorkLogs/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya0xvZ3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/IDB Course/C\#.Net/Modules-07/03/Me/Class_03_Practise_01/Class_03_Practise_01/Views/WorkLogs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya0xvZ3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/IDB Course/C\#.Net/Modules-07/03/Me/Class_03_Practise_01/Class_03_Practise_01/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = X1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/IDB Course/C\#.Net/Modules-07/03/Me/Class_03_Practise_01/Class_03_Practise_01/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = X1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
